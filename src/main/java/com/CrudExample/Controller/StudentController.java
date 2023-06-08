@@ -45,20 +45,26 @@ public class StudentController {
 		stuservice.deleteBYId(id);
 	}
 		
-	@PutMapping
-	public Student updateById(@RequestBody Student student,@PathVariable("id") Long id) {
+	@PutMapping("/updatestudent/{id}")
+	public String updateById(@PathVariable  Long id,@RequestBody Student student) {
 		StudentDto studentdto = new StudentDto();
 		
 		studentdto.setId(student.getId());
 		studentdto.setName(student.getName());
 		studentdto.setCity(student.getCity());
 		studentdto.setMobile(student.getMobile());
-		 
 		
+//		student.setId(studentdto.getId());
+//		student.setName(studentdto.getName());
+//		student.setCity(studentdto.getCity());
+//		student.setMobile(studentdto.getMobile());
+//		 
+		String saveStudent = stuservice.updateStudent(id);
 		stuservice.saveStudent(student);
-		return null;
+		return "saveStudent" ;
 		
-	}
-	
-	
-}
+		}
+			
+		 	
+			
+		}	

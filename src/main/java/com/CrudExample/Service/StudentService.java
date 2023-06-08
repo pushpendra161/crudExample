@@ -14,6 +14,13 @@ public interface StudentService {
 
 	List<Student> getAllStudent();
 
+	String updateStudent(Long id);
+
+
+	
+
+	
+
 
 
 

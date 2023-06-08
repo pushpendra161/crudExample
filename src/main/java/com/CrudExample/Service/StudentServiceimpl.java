@@ -42,16 +42,19 @@ public class StudentServiceimpl implements StudentService {
 		return sturepo.findAll();
 	}
 
+	@Override
+	public String updateStudent(Long id) {
+		Optional<Student> findById = sturepo.findById(id);
+		Student student = findById.get();
+		return "student";
+	}
+
+
+	
+	
+
 	
 
 
-
-	
-
-	
-	
-	
-	
-	
 
 }
